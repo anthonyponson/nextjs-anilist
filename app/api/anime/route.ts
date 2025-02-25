@@ -46,7 +46,7 @@ export async function GET(request: Request) {
           season: $season,
           seasonYear: $seasonYear,
           status: $status,
-          sort: $sort
+          sort: $sort,
         ) {
           id
           title {
@@ -58,6 +58,7 @@ export async function GET(request: Request) {
           }
           episodes
           averageScore
+          genres
         }
       }
     }

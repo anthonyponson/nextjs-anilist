@@ -1,7 +1,8 @@
 "use client"
 
+import Image from "next/image"
 import { useParams } from "next/navigation"
-import { useEffect, useState } from "react"
+import { FC, useEffect, useState } from "react"
 
 interface Anime {
   id: number
@@ -14,9 +15,11 @@ interface Anime {
   }
   episodes?: number
   averageScore?: number
+  genres?: string[]
+  replace: string
 }
 
-export default function CategoryPage() {
+const CategoryPage: FC<Anime> = () => {
   const params = useParams()
   const category = params?.category ?? "" // e.g. "trending"
 
@@ -85,3 +88,5 @@ export default function CategoryPage() {
     </div>
   )
 }
+
+export default CategoryPage
